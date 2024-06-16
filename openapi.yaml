@@ -1,0 +1,38 @@
+openapi: 3.0.0
+info:
+  title: My API
+  version: 1.0.0
+paths:
+  /logs:
+    get:
+      summary: Get application logs
+      operationId: api.get_logs
+      responses:
+        '200':
+          description: Logs retrieved successfully
+          content:
+            text/plain:
+              schema:
+                type: string
+  /add:
+    get:
+      summary: Add two numbers
+      operationId: api.add
+      parameters:
+        - in: query
+          name: a
+          required: true
+          schema:
+            type: integer
+        - in: query
+          name: b
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Addition result
+          content:
+            text/plain:
+              schema:
+                type: string
